@@ -5,6 +5,7 @@ import com.example.s27083nbp.Services.NbpService;
 import com.example.s27083nbp.Services.QueryLogService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,10 +23,10 @@ public class NbpController {
     @Operation(summary = "Get exchange rate", description = "Get the average exchange rate for specific currency code and date range")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "Success"),
-            @ApiResponse(responseCode = "400", description = "Bad request"),
-            @ApiResponse(responseCode = "400", description = "Przekroczony limit"),
-            @ApiResponse(responseCode = "404", description = "Data not found bad date range or currecny"),
-            @ApiResponse(responseCode = "500", description = "Application error")
+            @ApiResponse(responseCode = "400", description = "Bad request", content = @Content),
+            @ApiResponse(responseCode = "400", description = "Przekroczony limit", content = @Content),
+            @ApiResponse(responseCode = "404", description = "Data not found bad date range or currecny", content = @Content),
+            @ApiResponse(responseCode = "500", description = "Application error", content = @Content)
     })
     @GetMapping("/average-rate")
     public NbpResponse getAverageRate(
