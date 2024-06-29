@@ -1,8 +1,15 @@
 package com.example.s27083nbp.Models;
 
+import io.swagger.v3.oas.annotations.media.Schema;
+
 public class Rate {
+    @Schema(description = "Rate number", example = "125/A/NBP/2024")
     private String no;
+
+    @Schema(description = "Effective date", example = "2024-06-28")
     private String effectiveDate;
+
+    @Schema(description = "Mid exchange rate", example = "4.4813")
     private double mid;
 
     public String getNo() {
